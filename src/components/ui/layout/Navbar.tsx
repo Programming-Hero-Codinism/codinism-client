@@ -14,7 +14,7 @@ import { Button } from "../button";
 
 const menu = [
   { path: "/service", label: "Service" },
-  { path: "/ai-first-engineer", label: "AI First Engineer" },
+  { path: "/ai-first-engineer", label: "Hire AI First Engineer" },
   { path: "/why-codinism", label: "Why Codinism" },
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
@@ -27,7 +27,7 @@ export default function Navbar() {
     <nav className="px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] ">
       {/* 
       desktop menu */}
-      <div className="flex justify-between ">
+      <div className="flex justify-between items-center">
         {/* Logo Left */}
         <div className="hidden md:block">
           <NavigationMenu>

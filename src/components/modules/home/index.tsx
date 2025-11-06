@@ -1,7 +1,9 @@
+import Banner from "@/components/ui/sections/Banner";
+
 export default function HomePage() {
   return (
     <>
-      <h1 className="">Hero section</h1>
+      <Banner />
     </>
   );
 }
