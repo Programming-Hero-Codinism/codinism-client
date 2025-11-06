@@ -31,7 +31,7 @@ export default function Navbar() {
         {/* Logo Left */}
         <div className="hidden md:block">
           <NavigationMenu>
-            <NavigationMenuLink href="/">
+            <NavigationMenuLink href="/" className="">
               <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
             </NavigationMenuLink>
           </NavigationMenu>
