@@ -1,5 +1,6 @@
 import Adventure from "@/components/ui/sections/Adventure";
 import Banner from "@/components/ui/sections/Banner";
+import GenyoraSection from "@/components/ui/sections/Genoyara";
 import Grow from "@/components/ui/sections/Grow";
 import Industry from "@/components/ui/sections/Industry";
 import TechStack from "@/components/ui/sections/TechStack";
@@ -11,6 +12,7 @@ export default function HomePage() {
       <div className="">
         <Banner />
         <Industry />
+        <GenyoraSection />
         <WeKnow />
         <Adventure />
         <Grow />

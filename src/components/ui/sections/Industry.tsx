@@ -1,5 +1,4 @@
 import { SectionTitle } from "@/components/custom";
-import Image from "next/image";
 
 // List of industries with background colors
 const industries = [
@@ -43,9 +42,7 @@ export default function Industry() {
         ))}
       </div>
 
-      {/* image */}
-
-      <div className="w-[932px] mx-auto mt-10">
+      {/* <div className="w-[932px] mx-auto mt-10">
         <div className="w-[932px] mx-auto mt-10  ">
           <Image
             className="block w-full h-auto border-8 border-secondary rounded-4xl"
@@ -58,7 +55,7 @@ export default function Industry() {
         <div className="w-[932px] mx-auto mt-4 h-[532px] bg-[url('/layer/zenoyra.png')] bg-cover bg-center rounded-2xl shadow-2xl">
           hello
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
