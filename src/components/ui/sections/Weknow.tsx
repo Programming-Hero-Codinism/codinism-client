@@ -8,13 +8,13 @@ const weKnowData = [
     title: "Web3",
     subtitle: "No cookie-cutter plans here.",
     description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
-    image: "/icon/Feature-icon-1.png",
+    image: "/icon/Feature-Icon-1.png",
   },
   {
     title: "Shopify, Wordpress",
     subtitle: "No cookie-cutter plans here.",
     description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
-    image: "/icon/Feature-icon-2.png",
+    image: "/icon/Feature-Icon-2.png",
   },
   {
     title: "Blockchain",
@@ -26,19 +26,19 @@ const weKnowData = [
     title: "Big Data",
     subtitle: "No cookie-cutter plans here.",
     description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
-    image: "/icon/Feature-icon-4.png",
+    image: "/icon/Feature-Icon-4.png",
   },
   {
     title: "Mobile Apps",
     subtitle: "No cookie-cutter plans here.",
     description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
-    image: "/icon/Feature-icon-5.png",
+    image: "/icon/Feature-Icon-5.png",
   },
   {
     title: "Fullstack Web Application",
     subtitle: "No cookie-cutter plans here.",
     description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
-    image: "/icon/Feature-icon-6.png",
+    image: "/icon/Feature-Icon-6.png",
   },
 ];
 

@@ -25,11 +25,11 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] bg-[#000102]">
+      <nav className="w-full px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] bg-transparent backdrop-blur-[6px]">
         <div className="max-w-[1400px] mx-auto">
           {/* Desktop Menu */}
           <div className="flex justify-between items-center">
-            {/* Logo Left */}
+            {/* Logo */}
             <div className="hidden md:block">
               <NavigationMenu>
                 <NavigationMenuLink href="/">
@@ -38,13 +38,16 @@ export default function Navbar() {
               </NavigationMenu>
             </div>
 
-            {/* Desktop Menu Center */}
+            {/* Center Menu */}
             <div className="hidden md:block">
               <NavigationMenu className="flex-1">
                 <NavigationMenuList className="flex gap-6">
                   {menu.map((m, index) => (
                     <NavigationMenuItem key={index}>
-                      <NavigationMenuLink className="text-[16px]" href={m.path}>
+                      <NavigationMenuLink
+                        className="text-[16px] hover:text-primary transition-colors"
+                        href={m.path}
+                      >
                         {m.label}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
@@ -53,6 +56,7 @@ export default function Navbar() {
               </NavigationMenu>
             </div>
 
+            {/* CTA Button */}
             <div className="hidden md:block">
               <Button
                 style={{ filter: "brightness(120%)" }}
@@ -63,7 +67,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile View */}
+          {/* Mobile Navbar */}
           <div className="flex justify-between items-center md:hidden w-full">
             <button
               className="p-2 focus:outline-none"
@@ -85,9 +89,9 @@ export default function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* Mobile Sliding Menu */}
+          {/* Mobile Slide Menu */}
           {mobileMenuOpen && (
-            <div className="absolute top-16 left-0 w-full bg-[#000102] z-50 flex flex-col justify-center items-center p-4 gap-4 md:hidden">
+            <div className="absolute top-16 left-0 w-full bg-[#000102]/95 z-50 flex flex-col justify-center items-center p-4 gap-4 md:hidden backdrop-blur-md">
               <NavigationMenu className="w-full">
                 <NavigationMenuList className="flex flex-col gap-4">
                   {menu.map((m, index) => (

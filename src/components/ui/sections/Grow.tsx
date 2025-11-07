@@ -52,7 +52,7 @@ export default function Grow() {
             <div
               key={index}
               className={`flex items-center gap-6 pt-4 ${
-                item.isBorder ? "border-t border-dotted border-primary mt-16 pt-16" : "mt-4"
+                item.isBorder ? "border-t border-dotted border-primary mt-16 pt-16" : "mt-4  "
               }`}
             >
               {/* Step Number */}

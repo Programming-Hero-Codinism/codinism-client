@@ -41,21 +41,6 @@ export default function Industry() {
           </div>
         ))}
       </div>
-
-      {/* <div className="w-[932px] mx-auto mt-10">
-        <div className="w-[932px] mx-auto mt-10  ">
-          <Image
-            className="block w-full h-auto border-8 border-secondary rounded-4xl"
-            src="/layer/zenoyra.png"
-            alt="original"
-            width={932}
-            height={532}
-          />
-        </div>
-        <div className="w-[932px] mx-auto mt-4 h-[532px] bg-[url('/layer/zenoyra.png')] bg-cover bg-center rounded-2xl shadow-2xl">
-          hello
-        </div>
-      </div> */}
     </section>
   );
 }

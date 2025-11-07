@@ -33,7 +33,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#000102]`}
         suppressHydrationWarning
       >
-        <Navbar></Navbar>
+        <div className="fixed top-0 left-0 w-full z-50">
+          <Navbar />
+        </div>
         <section className="max-w-[1400px] mx-auto">
           <ThemeProvider
             attribute="class"
