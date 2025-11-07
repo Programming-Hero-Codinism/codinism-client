@@ -56,7 +56,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <Button
                 style={{ filter: "brightness(120%)" }}
-                className="rounded-full h-[50px] w-[152px] shadow-[inset_0_0_4px_1px_rgba(176,209,254,0.6)]"
+                className="rounded-full h-[50px] w-[152px] shadow-lg"
               >
                 Start a free trial
               </Button>

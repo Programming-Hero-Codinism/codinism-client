@@ -1,4 +1,5 @@
 import { SectionTitle } from "@/components/custom";
+import { ArrowUpRight } from "lucide-react";
 import { Button } from "../button";
 
 export default function Banner() {
@@ -27,11 +28,11 @@ export default function Banner() {
             pride, so your success is our shared mission.
           </p>
           <div className="mt-12">
-            <Button className="rounded-full h-12 font-normal w-[140px] shadow-[inset_0_0_4px_1px_rgba(176,209,254,0.6)]">
-              Lets Talk
+            <Button className="rounded-full h-12 font-normal w-[140px]  shadow-lg">
+              Lets Talk <ArrowUpRight size={18} />
             </Button>
 
-            <Button className="rounded-full h-12 w-[140px] bg-secondary hover:bg-secondary font-normal ml-4">
+            <Button className="rounded-full h-12 w-[140px] bg-secondary hover:bg-secondary font-normal ml-4 shadow-lg">
               See Service
             </Button>
           </div>

@@ -1,3 +1,4 @@
+import Footer from "@/components/ui/layout/Footer";
 import Navbar from "@/components/ui/layout/Navbar";
 import { ThemeProvider } from "@/contexts/ThemeProvider";
 import type { Metadata } from "next";
@@ -46,6 +47,7 @@ export default function RootLayout({
             </ConditionalLayout>
           </ThemeProvider>
         </section>
+        <Footer />
       </body>
     </html>
   );

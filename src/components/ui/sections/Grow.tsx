@@ -1,4 +1,5 @@
 import { SectionTitle } from "@/components/custom";
+import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../button";
 
@@ -75,8 +76,8 @@ export default function Grow() {
               evolves. We track performance metrics, identify optimization opportunities, and adapt
               solutions to changing needs.
             </p>
-            <Button className="rounded-full h-[30px] w-[170px] mt-6 shadow-[inset_0_0_4px_1px_rgba(176,209,254,0.6)] px-2">
-              Lets Grow Together
+            <Button className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full shadow-lg h-[30px] w-[170px] mt-6">
+              Send a message <ArrowUpRight size={18} />
             </Button>
           </div>
         </div>

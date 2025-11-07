@@ -2,6 +2,7 @@ import Adventure from "@/components/ui/sections/Adventure";
 import Banner from "@/components/ui/sections/Banner";
 import Grow from "@/components/ui/sections/Grow";
 import Industry from "@/components/ui/sections/Industry";
+import TechStack from "@/components/ui/sections/TechStack";
 import WeKnow from "@/components/ui/sections/Weknow";
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
         <WeKnow />
         <Adventure />
         <Grow />
+        <TechStack />
       </div>
     </>
   );
