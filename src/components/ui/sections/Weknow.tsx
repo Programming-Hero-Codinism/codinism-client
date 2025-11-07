@@ -1,5 +1,6 @@
 import { SectionTitle } from "@/components/custom";
 import Image from "next/image";
+import { Button } from "../button";
 
 const weKnowData = [
   {
@@ -61,6 +62,12 @@ export default function WeKnow() {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex items-center justify-center">
+        {" "}
+        <Button className="rounded-full h-[30px] w-[190px] mt-6 px-2 ">
+          Start your journey with AI
+        </Button>
       </div>
     </>
   );

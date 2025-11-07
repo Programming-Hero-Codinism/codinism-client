@@ -20,8 +20,7 @@ const growData = [
   },
   {
     title: "Monitoring & Optimization",
-    description:
-      "Ongoing monitoring, strategic advice, and proactive improvements as your business evolves. We track performance metrics, identify optimization opportunities, and adapt solutions to changing needs.",
+    description: "",
     isBorder: true,
   },
 ];
@@ -76,8 +75,8 @@ export default function Grow() {
               evolves. We track performance metrics, identify optimization opportunities, and adapt
               solutions to changing needs.
             </p>
-            <Button className="rounded-full h-[26px] w-[134px] mt-6 shadow-[inset_0_0_4px_1px_rgba(176,209,254,0.6)]">
-              Start a free trial
+            <Button className="rounded-full h-[30px] w-[170px] mt-6 shadow-[inset_0_0_4px_1px_rgba(176,209,254,0.6)] px-2">
+              Lets Grow Together
             </Button>
           </div>
         </div>
