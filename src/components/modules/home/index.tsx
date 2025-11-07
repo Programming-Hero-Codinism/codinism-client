@@ -1,5 +1,6 @@
 import Adventure from "@/components/ui/sections/Adventure";
 import Banner from "@/components/ui/sections/Banner";
+import Grow from "@/components/ui/sections/Grow";
 import Industry from "@/components/ui/sections/Industry";
 import WeKnow from "@/components/ui/sections/Weknow";
 
@@ -11,6 +12,7 @@ export default function HomePage() {
         <Industry />
         <WeKnow />
         <Adventure />
+        <Grow />
       </div>
     </>
   );

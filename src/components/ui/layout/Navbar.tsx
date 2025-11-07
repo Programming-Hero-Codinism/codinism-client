@@ -104,9 +104,6 @@ export default function Navbar() {
           )}
         </div>
       </nav>
-
-      {/* Push content below navbar */}
-      <div className="pt-[128px]">{/* page content goes here */}</div>
     </>
   );
 }
