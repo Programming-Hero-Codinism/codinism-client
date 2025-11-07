@@ -24,90 +24,89 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] ">
-      {/* 
-      desktop menu */}
-      <div className="flex justify-between items-center">
-        {/* Logo Left */}
-        <div className="hidden md:block">
-          <NavigationMenu>
-            <NavigationMenuLink href="/" className="">
-              <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
-            </NavigationMenuLink>
-          </NavigationMenu>
-        </div>
+    <>
+      <nav className="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] bg-[#000102]">
+        <div className="max-w-[1400px] mx-auto">
+          {/* Desktop Menu */}
+          <div className="flex justify-between items-center">
+            {/* Logo Left */}
+            <div className="hidden md:block">
+              <NavigationMenu>
+                <NavigationMenuLink href="/">
+                  <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
+                </NavigationMenuLink>
+              </NavigationMenu>
+            </div>
 
-        {/* Desktop Menu Center */}
-        <div className="hidden md:block ">
-          <NavigationMenu className="flex-1">
-            <NavigationMenuList className="flex gap-6">
-              {menu.map((m, index) => (
-                <NavigationMenuItem key={index}>
-                  <NavigationMenuLink className="text-[16px]" href={m.path}>
-                    {m.label}
+            {/* Desktop Menu Center */}
+            <div className="hidden md:block">
+              <NavigationMenu className="flex-1">
+                <NavigationMenuList className="flex gap-6">
+                  {menu.map((m, index) => (
+                    <NavigationMenuItem key={index}>
+                      <NavigationMenuLink className="text-[16px]" href={m.path}>
+                        {m.label}
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+
+            <div className="hidden md:block">
+              <Button
+                style={{ filter: "brightness(120%)" }}
+                className="rounded-full h-[50px] w-[152px] shadow-[inset_0_0_4px_1px_rgba(176,209,254,0.6)]"
+              >
+                Start a free trial
+              </Button>
+            </div>
+          </div>
+
+          {/* Mobile View */}
+          <div className="flex justify-between items-center md:hidden w-full">
+            <button
+              className="p-2 focus:outline-none"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/">
+                      <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
-        <div className="hidden md:block">
-          <Button
-            style={{
-              filter: "brightness(120%)",
-            }}
-            className="rounded-full h-[50px] w-[152px] shadow-[inset_0_0_4px_1px_rgba(176,209,254,0.6)] "
-          >
-            Start a free trial
-          </Button>
+          {/* Mobile Sliding Menu */}
+          {mobileMenuOpen && (
+            <div className="absolute top-16 left-0 w-full bg-[#000102] z-50 flex flex-col justify-center items-center p-4 gap-4 md:hidden">
+              <NavigationMenu className="w-full">
+                <NavigationMenuList className="flex flex-col gap-4">
+                  {menu.map((m, index) => (
+                    <NavigationMenuItem key={index}>
+                      <NavigationMenuLink className="text-[16px]" href={m.path}>
+                        {m.label}
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+              <Button className="rounded-full h-12 w-40">Start a free trial</Button>
+            </div>
+          )}
         </div>
-      </div>
-      {/* mobile view */}
-      <div className="flex justify-between items-center md:hidden w-full">
-        {/* Hamburger Button */}
-        <button
-          className="p-2 focus:outline-none"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+      </nav>
 
-        {/* Logo */}
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/">
-                  <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-      {/* Mobile Sliding Menu */}{" "}
-      {mobileMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-[#000102] z-50 flex flex-col justify-center items-center p-4 gap-4 md:hidden">
-          {" "}
-          <NavigationMenu className="w-full">
-            {" "}
-            <NavigationMenuList className="flex flex-col gap-4">
-              {" "}
-              {menu.map((m, index) => (
-                <NavigationMenuItem key={index}>
-                  {" "}
-                  <NavigationMenuLink className="text-[16px]" href={m.path}>
-                    {" "}
-                    {m.label}{" "}
-                  </NavigationMenuLink>{" "}
-                </NavigationMenuItem>
-              ))}{" "}
-            </NavigationMenuList>{" "}
-          </NavigationMenu>{" "}
-          <Button className="rounded-full h-12 w-40">Start a free trial</Button>{" "}
-        </div>
-      )}
-    </nav>
+      {/* Push content below navbar */}
+      <div className="pt-[128px]">{/* page content goes here */}</div>
+    </>
   );
 }

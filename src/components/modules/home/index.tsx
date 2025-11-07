@@ -1,12 +1,14 @@
 import Banner from "@/components/ui/sections/Banner";
 import Industry from "@/components/ui/sections/Industry";
+import WeKnow from "@/components/ui/sections/Weknow";
 
 export default function HomePage() {
   return (
     <>
-      <div className="px-6 md:px-12">
+      <div className="">
         <Banner />
         <Industry />
+        <WeKnow />
       </div>
     </>
   );

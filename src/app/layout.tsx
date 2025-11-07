@@ -33,17 +33,19 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <Navbar></Navbar>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ConditionalLayout>
-            <Toaster richColors position="bottom-right" />
-            {children}
-          </ConditionalLayout>
-        </ThemeProvider>
+        <section className="max-w-[1400px] mx-auto">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ConditionalLayout>
+              <Toaster richColors position="bottom-right" />
+              {children}
+            </ConditionalLayout>
+          </ThemeProvider>
+        </section>
       </body>
     </html>
   );
