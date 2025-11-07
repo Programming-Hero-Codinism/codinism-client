@@ -121,3 +121,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  display: flex;
+  width: 200%;
+  animation: marquee-left 20s linear infinite;
+}
+
+.animate-marquee-right {
+  display: flex;
+  width: 200%;
+  animation: marquee-right 20s linear infinite;
+}
+
+/* Optional: pause on hover */
+.animate-marquee-left:hover,
+.animate-marquee-right:hover {
+  animation-play-state: paused;
+}
