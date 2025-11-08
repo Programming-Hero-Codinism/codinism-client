@@ -12,9 +12,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../button";
 
+// Navigation menu items
 const menu = [
   { path: "/service", label: "Service" },
-  { path: "/ai-first-engineer", label: "AI First Engineer" },
+  { path: "/ai-first-engineer", label: "Hire AI First Engineer" },
   { path: "/why-codinism", label: "Why Codinism" },
   { path: "/about", label: "About" },
   { path: "/contact", label: "Contact" },
@@ -24,83 +25,98 @@ export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] ">
-      {/* 
-      desktop menu */}
-      <div className="flex justify-between ">
-        {/* Logo Left */}
-        <div className="hidden md:block">
-          <NavigationMenu>
-            <NavigationMenuLink href="/" className="">
-              <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
-            </NavigationMenuLink>
-          </NavigationMenu>
-        </div>
+    <>
+      {/* ---------------- NAVBAR MAIN WRAPPER ---------------- */}
+      <nav className="w-full px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] bg-transparent backdrop-blur-[6px]">
+        <div className="max-w-[1400px] mx-auto">
+          {/* ---------------- DESKTOP NAV (md+) ---------------- */}
+          <div className="flex justify-between items-center">
+            {/* Brand Logo */}
+            <div className="hidden md:block">
+              <NavigationMenu>
+                <NavigationMenuLink href="/">
+                  <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
+                </NavigationMenuLink>
+              </NavigationMenu>
+            </div>
 
-        {/* Desktop Menu Center */}
-        <div className="hidden md:block ">
-          <NavigationMenu className="flex-1">
-            <NavigationMenuList className="flex gap-6">
-              {menu.map((m, index) => (
-                <NavigationMenuItem key={index}>
-                  <NavigationMenuLink className="text-[16px]" href={m.path}>
-                    {m.label}
+            {/* Center Menu Links */}
+            <div className="hidden md:block">
+              <NavigationMenu className="flex-1">
+                <NavigationMenuList className="flex gap-6">
+                  {menu.map((m, index) => (
+                    <NavigationMenuItem key={index}>
+                      <NavigationMenuLink className="text-[16px] text-white" href={m.path}>
+                        {m.label}
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+            </div>
+
+            {/* Right-side CTA Button */}
+            <div className="hidden md:block">
+              <Button
+                style={{ filter: "brightness(120%)" }}
+                className="rounded-full h-[50px] w-[152px] shadow-lg"
+              >
+                Start a free trial
+              </Button>
+            </div>
+          </div>
+
+          {/* ---------------- MOBILE NAV (below md) ---------------- */}
+          <div className="flex justify-between items-center md:hidden w-full">
+            {/* Hamburger button (no hover effect applied) */}
+            <button
+              className="p-2 focus:outline-none active:scale-95 transition-transform" // removed default hover styling
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Mobile Menu"
+            >
+              {/* Icon changes based on state */}
+              {mobileMenuOpen ? (
+                <X className="text-white" size={24} />
+              ) : (
+                <Menu className="text-white" size={24} />
+              )}
+            </button>
+
+            {/* Center logo for mobile */}
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuLink asChild>
+                    <Link href="/">
+                      <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
 
-        <div className="hidden md:block">
-          <Button className="rounded-full h-12 w-40">Start a free trial</Button>
-        </div>
-      </div>
-      {/* mobile view */}
-      <div className="flex justify-between items-center md:hidden w-full">
-        {/* Hamburger Button */}
-        <button
-          className="p-2 focus:outline-none"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* ---------------- MOBILE SLIDE MENU ---------------- */}
+          {mobileMenuOpen && (
+            <div className="absolute top-16 left-0 w-full bg-[#000102]/95 z-50 flex flex-col justify-center items-center p-4 gap-4 md:hidden backdrop-blur-md">
+              <NavigationMenu className="w-full">
+                <NavigationMenuList className="flex flex-col gap-4">
+                  {menu.map((m, index) => (
+                    <NavigationMenuItem key={index}>
+                      <NavigationMenuLink className="text-[16px] text-white" href={m.path}>
+                        {m.label}
+                      </NavigationMenuLink>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
 
-        {/* Logo */}
-        <NavigationMenu>
-          <NavigationMenuList>
-            <NavigationMenuItem>
-              <NavigationMenuLink asChild>
-                <Link href="/">
-                  <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
-                </Link>
-              </NavigationMenuLink>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-      {/* Mobile Sliding Menu */}{" "}
-      {mobileMenuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-[#000102] z-50 flex flex-col justify-center items-center p-4 gap-4 md:hidden">
-          {" "}
-          <NavigationMenu className="w-full">
-            {" "}
-            <NavigationMenuList className="flex flex-col gap-4">
-              {" "}
-              {menu.map((m, index) => (
-                <NavigationMenuItem key={index}>
-                  {" "}
-                  <NavigationMenuLink className="text-[16px]" href={m.path}>
-                    {" "}
-                    {m.label}{" "}
-                  </NavigationMenuLink>{" "}
-                </NavigationMenuItem>
-              ))}{" "}
-            </NavigationMenuList>{" "}
-          </NavigationMenu>{" "}
-          <Button className="rounded-full h-12 w-40">Start a free trial</Button>{" "}
+              {/* CTA Button for mobile */}
+              <Button className="rounded-full h-12 w-40">Start a free trial</Button>
+            </div>
+          )}
         </div>
-      )}
-    </nav>
+      </nav>
+    </>
   );
 }

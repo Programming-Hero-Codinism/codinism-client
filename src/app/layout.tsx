@@ -1,3 +1,4 @@
+import Footer from "@/components/ui/layout/Footer";
 import Navbar from "@/components/ui/layout/Navbar";
 import { ThemeProvider } from "@/contexts/ThemeProvider";
 import type { Metadata } from "next";
@@ -32,18 +33,23 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#000102]`}
         suppressHydrationWarning
       >
-        <Navbar></Navbar>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <ConditionalLayout>
-            <Toaster richColors position="bottom-right" />
-            {children}
-          </ConditionalLayout>
-        </ThemeProvider>
+        <div className="fixed top-0 left-0 w-full z-50">
+          <Navbar />
+        </div>
+        <section className="max-w-[1400px] mx-auto">
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <ConditionalLayout>
+              <Toaster richColors position="bottom-right" />
+              {children}
+            </ConditionalLayout>
+          </ThemeProvider>
+        </section>
+        <Footer />
       </body>
     </html>
   );
