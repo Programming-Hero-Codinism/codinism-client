@@ -41,6 +41,7 @@ export default function HomePage() {
       <WeKnow />
       <Adventure />
       <Grow />
+
       <TechStack />
     </>
   );

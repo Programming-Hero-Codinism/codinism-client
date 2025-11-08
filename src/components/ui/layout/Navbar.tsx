@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Button } from "../button";
 
+// Navigation menu items
 const menu = [
   { path: "/service", label: "Service" },
   { path: "/ai-first-engineer", label: "Hire AI First Engineer" },
@@ -25,11 +26,12 @@ export default function Navbar() {
 
   return (
     <>
+      {/* ---------------- NAVBAR MAIN WRAPPER ---------------- */}
       <nav className="w-full px-6 md:px-12 py-4 border-t-4 border-primary border-b border-b-[#003570] bg-transparent backdrop-blur-[6px]">
         <div className="max-w-[1400px] mx-auto">
-          {/* Desktop Menu */}
+          {/* ---------------- DESKTOP NAV (md+) ---------------- */}
           <div className="flex justify-between items-center">
-            {/* Logo */}
+            {/* Brand Logo */}
             <div className="hidden md:block">
               <NavigationMenu>
                 <NavigationMenuLink href="/">
@@ -38,16 +40,13 @@ export default function Navbar() {
               </NavigationMenu>
             </div>
 
-            {/* Center Menu */}
+            {/* Center Menu Links */}
             <div className="hidden md:block">
               <NavigationMenu className="flex-1">
                 <NavigationMenuList className="flex gap-6">
                   {menu.map((m, index) => (
                     <NavigationMenuItem key={index}>
-                      <NavigationMenuLink
-                        className="text-[16px] hover:text-primary transition-colors"
-                        href={m.path}
-                      >
+                      <NavigationMenuLink className="text-[16px] text-white" href={m.path}>
                         {m.label}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
@@ -56,7 +55,7 @@ export default function Navbar() {
               </NavigationMenu>
             </div>
 
-            {/* CTA Button */}
+            {/* Right-side CTA Button */}
             <div className="hidden md:block">
               <Button
                 style={{ filter: "brightness(120%)" }}
@@ -67,15 +66,23 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Navbar */}
+          {/* ---------------- MOBILE NAV (below md) ---------------- */}
           <div className="flex justify-between items-center md:hidden w-full">
+            {/* Hamburger button (no hover effect applied) */}
             <button
-              className="p-2 focus:outline-none"
+              className="p-2 focus:outline-none active:scale-95 transition-transform" // removed default hover styling
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle Mobile Menu"
             >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              {/* Icon changes based on state */}
+              {mobileMenuOpen ? (
+                <X className="text-white" size={24} />
+              ) : (
+                <Menu className="text-white" size={24} />
+              )}
             </button>
 
+            {/* Center logo for mobile */}
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -89,20 +96,22 @@ export default function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* Mobile Slide Menu */}
+          {/* ---------------- MOBILE SLIDE MENU ---------------- */}
           {mobileMenuOpen && (
             <div className="absolute top-16 left-0 w-full bg-[#000102]/95 z-50 flex flex-col justify-center items-center p-4 gap-4 md:hidden backdrop-blur-md">
               <NavigationMenu className="w-full">
                 <NavigationMenuList className="flex flex-col gap-4">
                   {menu.map((m, index) => (
                     <NavigationMenuItem key={index}>
-                      <NavigationMenuLink className="text-[16px]" href={m.path}>
+                      <NavigationMenuLink className="text-[16px] text-white" href={m.path}>
                         {m.label}
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
                 </NavigationMenuList>
               </NavigationMenu>
+
+              {/* CTA Button for mobile */}
               <Button className="rounded-full h-12 w-40">Start a free trial</Button>
             </div>
           )}
