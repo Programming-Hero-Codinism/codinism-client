@@ -32,12 +32,17 @@ export default function Navbar() {
           {/* ---------------- DESKTOP NAV (md+) ---------------- */}
           <div className="flex justify-between items-center">
             {/* Brand Logo */}
-            <div className="hidden md:block">
-              <NavigationMenu>
-                <NavigationMenuLink href="/">
-                  <Image src="/logos/Logo.png" width={200} height={96} alt="Company logo" />
-                </NavigationMenuLink>
-              </NavigationMenu>
+            <div className="hidden md:block shrink-0">
+              <Link href="/" className="block">
+                <Image
+                  src="/logos/Logo.png"
+                  alt="Company logo"
+                  width={200}
+                  height={96}
+                  priority
+                  className="w-[200px] h-auto object-contain"
+                />
+              </Link>
             </div>
 
             {/* Center Menu Links */}
@@ -46,8 +51,10 @@ export default function Navbar() {
                 <NavigationMenuList className="flex gap-6">
                   {menu.map((m, index) => (
                     <NavigationMenuItem key={index}>
-                      <NavigationMenuLink className="text-[16px] text-white" href={m.path}>
-                        {m.label}
+                      <NavigationMenuLink asChild>
+                        <Link href={m.path} className="text-[16px] text-white hover:text-gray-300">
+                          {m.label}
+                        </Link>
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
