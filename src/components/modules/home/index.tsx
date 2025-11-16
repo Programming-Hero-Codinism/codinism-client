@@ -1,5 +1,5 @@
 import Adventure from "@/components/ui/sections/Adventure";
-import Banner from "@/components/ui/sections/Banner";
+import Banner2 from "@/components/ui/sections/Banner2";
 import GenyoraSection from "@/components/ui/sections/Genoyara";
 import Grow from "@/components/ui/sections/Grow";
 import Industry from "@/components/ui/sections/Industry";
@@ -34,8 +34,10 @@ export default function HomePage() {
         </div>
 
         {/* Hero + Sections */}
-        <Banner />
+        {/* <Banner /> */}
+        <Banner2 />
       </div>
+
       <Industry />
       <GenyoraSection />
       <WeKnow />
