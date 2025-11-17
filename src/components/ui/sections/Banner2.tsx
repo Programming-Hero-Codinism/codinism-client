@@ -1,13 +1,12 @@
 import { SectionTitle } from "@/components/custom";
 import { ArrowUpRight } from "lucide-react";
+import BinaryBackground from "../BinaryBackground";
 import { Button } from "../button";
-import BinaryBackground from "./BinaryBackground";
 
 const Banner2 = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
-      <BinaryBackground />
-
+      <BinaryBackground w={0.48} h={0.45} translateVal={80} />
       {/* Centered content */}
       <div
         className="

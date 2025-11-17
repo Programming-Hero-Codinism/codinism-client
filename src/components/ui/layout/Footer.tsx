@@ -1,10 +1,11 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../button";
+import Codinism from "../sections/Codinism";
 
 export default function Footer() {
   return (
-    <section className="overflow-hidden  md:mx-auto max-w-[1400px] mt-16">
+    <section className="overflow-hidden  md:mx-auto max-w-[1400px] mt-16 relative">
       <footer className="bg-[#000814] text-white border border-secondary ">
         {/* Top Section */}
         <div className="grid md:grid-cols-3 border-b border-secondary">
@@ -87,7 +88,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-      <div className="bg-[url('/layer/fotter-bg.png')] bg-cover bg-center   p-10">
+      {/* <div className="bg-[url('/layer/fotter-bg.png')] bg-cover bg-center   p-10">
         <Image
           src="/layer/fotter_codinism.png"
           width={1400}
@@ -95,6 +96,25 @@ export default function Footer() {
           alt="Footer image"
           className="mx-auto"
         />
+      </div> */}
+
+      {/* bottom section */}
+
+      <div className="relative">
+        {/* Binary Animation */}
+        <Codinism />
+
+        {/* Centered on top of animation */}
+        <div className="absolute top-0">
+          {" "}
+          <Image
+            src="/layer/fotter_codinism.png"
+            width={1400}
+            height={244}
+            alt="Footer image"
+            className="mt-6"
+          />
+        </div>
       </div>
     </section>
   );
