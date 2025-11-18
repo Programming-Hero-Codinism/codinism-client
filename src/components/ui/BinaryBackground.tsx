@@ -11,10 +11,9 @@ interface Cell {
 interface BinaryProps {
   w: number; // Horizontal shape stretch
   h: number; // Vertical shape height
-  translateVal: number; // Optional vertical shift for canvas
 }
 
-export default function BinaryBackground({ w, h, translateVal }: BinaryProps) {
+export default function BinaryBackground({ w, h }: BinaryProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -147,10 +146,5 @@ export default function BinaryBackground({ w, h, translateVal }: BinaryProps) {
   }, []);
 
   // Canvas element (translated vertically if needed)
-  return (
-    <canvas
-      ref={canvasRef}
-      className={`inset-0 -z-10 w-full h-full md:translate-y-[${translateVal}px]`}
-    />
-  );
+  return <canvas ref={canvasRef} className={`inset-0 -z-10 w-full h-full`} />;
 }

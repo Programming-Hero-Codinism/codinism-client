@@ -6,7 +6,7 @@ import { Button } from "../button";
 const Banner2 = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center">
-      <BinaryBackground w={0.48} h={0.45} translateVal={80} />
+      <BinaryBackground w={0.48} h={0.45} />
       {/* Centered content */}
       <div
         className="
@@ -18,6 +18,7 @@ const Banner2 = () => {
           justify-center
           text-white
           px-4
+          top-0
         "
       >
         {/* Main Heading */}

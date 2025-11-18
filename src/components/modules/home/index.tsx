@@ -1,5 +1,6 @@
 import Adventure from "@/components/ui/sections/Adventure";
 import Banner2 from "@/components/ui/sections/Banner2";
+import Contribution from "@/components/ui/sections/Contribution";
 import GenyoraSection from "@/components/ui/sections/Genoyara";
 import Grow from "@/components/ui/sections/Grow";
 import Industry from "@/components/ui/sections/Industry";
@@ -41,6 +42,7 @@ export default function HomePage() {
       <Industry />
       <GenyoraSection />
       <WeKnow />
+      <Contribution />
       <Adventure />
       <Grow />
 
