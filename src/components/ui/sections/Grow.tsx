@@ -1,3 +1,4 @@
+import Accordion from "@/components/accordion";
 import { SectionTitle } from "@/components/custom";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
@@ -7,26 +8,30 @@ import { Button } from "../button";
  * Timeline data: Each item represents a step in the growth process
  * isBorder = draws the dotted separator before the last item
  */
-const growData = [
+const accordionData = [
   {
+    value: "discovery",
     title: "Discovery & Consultation",
-    description: "",
-    isBorder: false,
+    content:
+      "We start by understanding your business, goals, and current challenges. Through detailed consultation, we uncover opportunities for growth and identify key focus areas.",
   },
   {
+    value: "strategy",
     title: "Strategy & Planning",
-    description: "",
-    isBorder: false,
+    content:
+      "Based on the insights gathered, we design a tailored strategy and actionable roadmap. This includes prioritizing initiatives, defining KPIs, and aligning resources for maximum impact.",
   },
   {
+    value: "execution",
     title: "Execution & Growth",
-    description: "",
-    isBorder: false,
+    content:
+      "Our team implements the strategy with precision. From campaigns to operational improvements, we focus on delivering measurable results and accelerating business growth.",
   },
   {
+    value: "monitoring",
     title: "Monitoring & Optimization",
-    description: "",
-    isBorder: true,
+    content:
+      "We continuously track performance, analyze data, and optimize processes to ensure sustainable growth. This iterative approach keeps your business ahead of the curve.",
   },
 ];
 
@@ -43,7 +48,7 @@ export default function Grow() {
         - Single column on mobile
         - Image left + content right on medium & above
       */}
-      <div className="grid grid-cols-1 md:grid-cols-2 mt-12 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-12 gap-10 items-center">
         {/* ---------------------------- LEFT IMAGE ---------------------------- */}
         <div className="flex justify-center">
           <Image
@@ -57,49 +62,17 @@ export default function Grow() {
         </div>
 
         {/* ---------------------------- RIGHT CONTENT ---------------------------- */}
-        <div className="flex flex-col">
-          {/* Growth Steps */}
-          {growData.map((item, index) => (
-            <div
-              key={index}
-              className={`flex items-center gap-6 pt-4 ${
-                item.isBorder ? "border-t border-dotted border-primary mt-16 pt-16" : "mt-4"
-              }`}
-            >
-              {/* Step number circle */}
-              <div className="bg-[#001636] w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
-                <p className="text-primary font-semibold">{String(index + 1).padStart(2, "0")}</p>
-              </div>
-
-              {/* Step text */}
-              <div>
-                <p className="text-lg font-medium text-white">{item.title}</p>
-              </div>
-            </div>
-          ))}
-
-          {/* ---------------------------- FINAL NOTES + BUTTON ---------------------------- */}
-          {/* 
-            `ml-[65px]` aligns this block visually with step text
-            (10 + 6 + 40 px accounted from: circle width + gap + alignment spacing)
-          */}
-          <div className="ml-[65px]">
-            <p className="text-sm text-gray-300">
-              Ongoing monitoring, strategic advice, and proactive improvements as your business
-              evolves. We track performance metrics, identify optimization opportunities, and adapt
-              solutions to changing needs.
-            </p>
-
-            <Button
-              className="
+        <div className="">
+          <Accordion items={accordionData}></Accordion>
+          <Button
+            className="
                 flex items-center gap-2 bg-primary text-white
                 px-6 py-3 rounded-full shadow-lg
-                h-[30px] w-[170px] mt-6
+                h-[30px] w-[170px] mt-16
               "
-            >
-              Send a message <ArrowUpRight size={18} />
-            </Button>
-          </div>
+          >
+            Send a message <ArrowUpRight size={18} />
+          </Button>
         </div>
       </div>
     </section>
