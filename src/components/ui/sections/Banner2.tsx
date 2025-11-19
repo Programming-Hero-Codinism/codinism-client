@@ -91,26 +91,6 @@ const Banner2 = () => {
           >
             Let’s Talk <ArrowUpRight size={18} />
           </Button>
-
-          <Button
-            className="
-              rounded-full
-              h-12
-              w-[160px]
-              bg-secondary
-              hover:bg-secondary/90
-              text-white
-              font-medium
-              shadow-lg
-              flex
-              items-center
-              justify-center
-              transition-all
-              duration-300
-            "
-          >
-            See Service
-          </Button>
         </div>
       </div>
     </div>
