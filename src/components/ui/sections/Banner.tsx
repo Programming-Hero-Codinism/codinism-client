@@ -1,6 +1,7 @@
 import { SectionTitle } from "@/components/custom";
 import { ArrowUpRight } from "lucide-react";
 import { Button } from "../button";
+import { cn } from "@/lib/utils";
 
 /**
  * Banner (Hero Section)
@@ -12,22 +13,27 @@ import { Button } from "../button";
  * - Clean, maintainable, and production-level structure.
  */
 
-export default function Banner() {
+type BannerProps = {
+  title_one?: string;
+  title_two?: string;
+  description?: string;
+  hideCTABtns?: boolean;
+  className?: string;
+};
+
+export default function Banner({
+  title_one,
+  title_two,
+  description,
+  hideCTABtns,
+  className,
+}: BannerProps) {
   return (
     <section
-      className="
-        relative
-        w-full
-        h-screen
-        flex
-        justify-center
-        items-center
-        bg-no-repeat
-        bg-center
-        bg-contain
-        px-4 sm:px-6 lg:px-8
-        overflow-hidden
-      "
+      className={cn(
+        "relative h-screen flex items-center justify-center px-4 py-20 bg-black/60 bg-cover bg-no-repeat bg-center",
+        className,
+      )}
       style={{
         backgroundImage: "url('/layer/banner_layer.png')",
         backgroundPosition: "center top 160px",
@@ -60,7 +66,8 @@ export default function Banner() {
             text-white
           "
         >
-          From idea to <br /> reality fast with AI.
+          {title_one ?? " From idea to "}
+          <br /> {title_two ?? "reality fast with AI."}
         </SectionTitle>
 
         {/* Subtitle / Description */}
@@ -76,14 +83,14 @@ export default function Banner() {
             mx-auto
           "
         >
-          We don’t just write code — we become your product partner, shaping your vision into a
-          real, scalable solution. Every project we take on is crafted with care, precision, and
-          pride, so your success is our shared mission.
+          {description ??
+            "We dont just write code — we become your product partner, shaping your vision into a real, scalable solution. Every project we take on is crafted with care, precision, and pride, so your success is our shared mission."}
         </p>
 
         {/* CTA Buttons */}
-        <div
-          className="
+        {!hideCTABtns && (
+          <div
+            className="
             mt-10
             flex
             flex-col
@@ -92,10 +99,10 @@ export default function Banner() {
             items-center
             gap-4
           "
-        >
-          {/* Primary Button */}
-          <Button
-            className="
+          >
+            {/* Primary Button */}
+            <Button
+              className="
               rounded-full
               h-12
               w-[160px]
@@ -112,13 +119,13 @@ export default function Banner() {
               transition-all
               duration-300
             "
-          >
-            Let’s Talk <ArrowUpRight size={18} />
-          </Button>
+            >
+              Let’s Talk <ArrowUpRight size={18} />
+            </Button>
 
-          {/* Secondary Button */}
-          <Button
-            className="
+            {/* Secondary Button */}
+            <Button
+              className="
               rounded-full
               h-12
               w-[160px]
@@ -133,10 +140,11 @@ export default function Banner() {
               transition-all
               duration-300
             "
-          >
-            See Service
-          </Button>
-        </div>
+            >
+              See Service
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

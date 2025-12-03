@@ -1,6 +1,7 @@
 import { ArrowUpRight, BadgeCheck, CalendarDays, Globe } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../button";
+import Link from "next/link";
 
 const features = [
   {
@@ -89,9 +90,10 @@ export default function Contribution() {
       </div>
 
       <div className="mx-auto w-[300px]">
-        {" "}
-        <Button
-          className="
+        <Link href={"/start-your-journey"} target="_blank">
+          {" "}
+          <Button
+            className="
               rounded-full
               h-[46px]
               w-[245px]
@@ -110,9 +112,10 @@ export default function Contribution() {
               mt-12
               
             "
-        >
-          Start your journey with AI <ArrowUpRight size={18} />
-        </Button>
+          >
+            Start your journey with AI <ArrowUpRight size={18} />
+          </Button>
+        </Link>
       </div>
     </section>
   );

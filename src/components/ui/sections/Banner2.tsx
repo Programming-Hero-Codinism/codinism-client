@@ -2,10 +2,20 @@ import { SectionTitle } from "@/components/custom";
 import { ArrowUpRight } from "lucide-react";
 import BinaryBackground from "../BinaryBackground";
 import { Button } from "../button";
+import AngleLight from "@/components/custom/AngleLight";
 
-const Banner2 = () => {
+type BannerProps = {
+  title_one?: string;
+  title_two?: string;
+  description?: string;
+  hideCTABtns?: boolean;
+  className?: string;
+};
+
+const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: BannerProps) => {
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className={`relative flex items-center justify-center overflow-hidden ${className}`}>
+      <AngleLight />
       <BinaryBackground w={0.48} h={0.45} />
       {/* Centered content */}
       <div
@@ -37,7 +47,8 @@ const Banner2 = () => {
             text-white
           "
         >
-          From idea to <br /> reality fast with AI.
+          {title_one ?? " From idea to "}
+          <br /> {title_two ?? "reality fast with AI."}
         </SectionTitle>
 
         {/* Subtitle */}
@@ -53,14 +64,14 @@ const Banner2 = () => {
             text-center
           "
         >
-          We don’t just write code — we become your product partner, shaping your vision into a
-          real, scalable solution. Every project we take on is crafted with care, precision, and
-          pride, so your success is our shared mission.
+          {description ??
+            "We don't just write code — we become your product partner, shaping your vision into a real, scalable solution. Every project we take on is crafted with care, precision, and pride, so your success is our shared mission."}
         </p>
 
         {/* Buttons */}
-        <div
-          className="
+        {!hideCTABtns && (
+          <div
+            className="
             mt-10
             flex
             flex-col
@@ -69,9 +80,9 @@ const Banner2 = () => {
             items-center
             gap-4
           "
-        >
-          <Button
-            className="
+          >
+            <Button
+              className="
               rounded-full
               h-12
               w-[160px]
@@ -88,12 +99,12 @@ const Banner2 = () => {
               transition-all
               duration-300
             "
-          >
-            Let’s Talk <ArrowUpRight size={18} />
-          </Button>
+            >
+              Let’s Talk <ArrowUpRight size={18} />
+            </Button>
 
-          <Button
-            className="
+            <Button
+              className="
               rounded-full
               h-12
               w-[160px]
@@ -108,10 +119,11 @@ const Banner2 = () => {
               transition-all
               duration-300
             "
-          >
-            See Service
-          </Button>
-        </div>
+            >
+              See Service
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
