@@ -1,7 +1,9 @@
+"use client";
 import { SectionTitle } from "@/components/custom";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../button";
+import { useContactForm } from "@/stores/useContactForm";
 
 /**
  * Data list for card content
@@ -47,8 +49,9 @@ const weKnowData = [
 ];
 
 export default function WeKnow() {
+  const { setIsOpen } = useContactForm();
   return (
-    <section className="mt-16">
+    <section className="mt-16" id="service">
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <SectionTitle size="2xl" className="text-center text-white">
         Trails we know well
@@ -104,6 +107,7 @@ export default function WeKnow() {
             px-6 py-3 rounded-full shadow-lg
             h-[30px] w-[190px] mt-6
           "
+          onClick={() => setIsOpen(true)}
         >
           Send a message <ArrowUpRight size={18} />
         </Button>

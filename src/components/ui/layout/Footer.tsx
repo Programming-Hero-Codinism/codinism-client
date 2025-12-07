@@ -5,7 +5,7 @@ import Codinism from "../sections/Codinism";
 
 export default function Footer() {
   return (
-    <section className="overflow-hidden  md:mx-auto max-w-[1400px] mt-16 relative">
+    <section id="contact" className="overflow-hidden  md:mx-auto max-w-[1400px] mt-16 relative">
       <footer className="bg-[#000814] text-white border border-secondary ">
         {/* Top Section */}
         <div className="grid md:grid-cols-3 border-b border-secondary">
@@ -21,7 +21,7 @@ export default function Footer() {
               efficiency.
             </p>
 
-            <p className="text-white font-semibold mb-3">
+            {/* <p className="text-white font-semibold mb-3">
               Certified IT experts delivering solutions fast
             </p>
 
@@ -30,7 +30,7 @@ export default function Footer() {
               <Image src="/icon/badge1.png" alt="badge" width={40} height={40} />
               <Image src="/icon/badge1.png" alt="badge" width={40} height={40} />
               <Image src="/icon/badge1.png" alt="badge" width={40} height={40} />
-            </div>
+            </div> */}
           </div>
 
           {/* Middle Column */}

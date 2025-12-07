@@ -14,11 +14,11 @@ import { Button } from "../button";
 
 // Navigation menu items
 const menu = [
-  { path: "/service", label: "Service" },
-  { path: "/ai-first-engineer", label: "Hire AI First Engineer" },
-  { path: "/why-codinism", label: "Why Codinism" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
+  { path: "#service", label: "Service" },
+  { path: "/start-your-journey", label: "Hire AI First Engineer" },
+  { path: "#faq", label: "Why Codinism" },
+  // { path: "/about", label: "About" },
+  { path: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -52,7 +52,11 @@ export default function Navbar() {
                   {menu.map((m, index) => (
                     <NavigationMenuItem key={index}>
                       <NavigationMenuLink asChild>
-                        <Link href={m.path} className="text-[16px] text-white hover:text-gray-300">
+                        <Link
+                          href={m.path}
+                          // target="_blank"
+                          className="text-[16px] text-white hover:text-gray-300"
+                        >
                           {m.label}
                         </Link>
                       </NavigationMenuLink>

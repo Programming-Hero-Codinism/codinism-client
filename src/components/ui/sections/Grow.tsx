@@ -1,8 +1,6 @@
 import Accordion from "@/components/accordion";
 import { SectionTitle } from "@/components/custom";
-import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
-import { Button } from "../button";
 
 /**
  * Timeline data: Each item represents a step in the growth process
@@ -37,7 +35,7 @@ const accordionData = [
 
 export default function Grow() {
   return (
-    <section className="mt-16">
+    <section className="mt-16 text-white" id="faq">
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <SectionTitle size="2xl" className="text-center text-white">
         How we can grow together
@@ -64,7 +62,7 @@ export default function Grow() {
         {/* ---------------------------- RIGHT CONTENT ---------------------------- */}
         <div className="">
           <Accordion items={accordionData}></Accordion>
-          <Button
+          {/* <Button
             className="
                 flex items-center gap-2 bg-primary text-white
                 px-6 py-3 rounded-full shadow-lg
@@ -72,7 +70,7 @@ export default function Grow() {
               "
           >
             Send a message <ArrowUpRight size={18} />
-          </Button>
+          </Button> */}
         </div>
       </div>
     </section>

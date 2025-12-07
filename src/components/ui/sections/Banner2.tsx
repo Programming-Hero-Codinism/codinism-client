@@ -1,8 +1,12 @@
+"use client";
 import { SectionTitle } from "@/components/custom";
 import { ArrowUpRight } from "lucide-react";
 import BinaryBackground from "../BinaryBackground";
 import { Button } from "../button";
 import AngleLight from "@/components/custom/AngleLight";
+import { SendMessageForm } from "@/components/forms/SendMessageForm";
+
+import { useContactForm } from "@/stores/useContactForm";
 
 type BannerProps = {
   title_one?: string;
@@ -13,6 +17,7 @@ type BannerProps = {
 };
 
 const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: BannerProps) => {
+  const { isOpen, setIsOpen } = useContactForm();
   return (
     <div className={`relative flex items-center justify-center overflow-hidden ${className}`}>
       <AngleLight />
@@ -99,6 +104,7 @@ const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: 
               transition-all
               duration-300
             "
+              onClick={() => setIsOpen(true)}
             >
               Let’s Talk <ArrowUpRight size={18} />
             </Button>
@@ -125,6 +131,7 @@ const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: 
           </div>
         )}
       </div>
+      <SendMessageForm open={isOpen} onOpenChange={setIsOpen} />
     </div>
   );
 };

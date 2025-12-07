@@ -2,11 +2,6 @@ import { SectionTitle } from "@/components/custom";
 import Image from "next/image";
 
 // List of technology stack logos
-const stackData = [
-  { logo: "/icon/fi_721671.png" },
-  { logo: "/icon/fi_3393920.png" },
-  { logo: "/icon/fi_358980.png" },
-];
 
 export default function TechStack() {
   return (
@@ -23,25 +18,50 @@ export default function TechStack() {
           - `flex-wrap` ensures logos wrap naturally on smaller screens
           - fixed width center-aligned container for consistency
       */}
-      <div className="bg-[#001636] flex justify-center flex-wrap gap-2 w-[345px] mx-auto py-2 rounded-2xl mt-10">
-        {stackData.map((item, index) => (
+      <div className="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+        {techStack?.map((tech, index) => (
           <div
             key={index}
-            className="
-              bg-secondary w-[104px] h-[104px]
-              rounded-xl flex items-center justify-center
-            "
+            className={`bg-primary/10 p-6 text-center items-center justify-center flex  gap-3 cursor-pointer hover:bg-primary/20 transition`}
           >
             <Image
-              src={item.logo}
-              width={56}
-              height={56}
-              alt={`tech-logo-${index}`}
+              src={tech.icon}
+              width={48}
+              height={48}
+              alt={`${tech.title} icon`}
               className="object-contain"
+              priority
             />
+            <p className="text-md">{tech?.title}</p>
           </div>
         ))}
       </div>
     </>
   );
 }
+
+const techStack = [
+  { title: "Javascript", icon: "/icon/stacks/javascript.png" },
+  { title: "TypeScript", icon: "/icon/stacks/typescript.png" },
+  { title: "React", icon: "/icon/stacks/react.png" },
+  { title: "Vue.JS", icon: "/icon/stacks/vue.png" },
+
+  // Backend
+  { title: "Node JS", icon: "/icon/stacks/node.png" },
+  { title: "Python", icon: "/icon/stacks/python.png" },
+  { title: "PHP", icon: "/icon/stacks/php.png" },
+  { title: "Django", icon: "/icon/stacks/dj.png" },
+  { title: "GraphQL", icon: "/icon/stacks/graphql.png" },
+
+  // Mobile
+  { title: "Android", icon: "/icon/stacks/android.png" },
+  { title: "Flutter", icon: "/icon/stacks/flutter.png" },
+  { title: "Swift", icon: "/icon/stacks/swift.png" },
+
+  // Database
+  { title: "PostgreSQL", icon: "/icon/stacks/postgres.png" },
+  { title: "MongoDB", icon: "/icon/stacks/mongodb.png" },
+
+  // DevOps
+  { title: "DevOps", icon: "/icon/stacks/devops.png" },
+];

@@ -24,7 +24,7 @@ const features = [
 
 export default function Contribution() {
   return (
-    <section className="bg-[#000102] py-8 px-4 mt-16">
+    <section id="staff-aug" className="bg-[#000102] py-8 px-4 mt-16">
       <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px]  leading-tight">
         How we contributed to <br /> build a dream team
       </h1>
@@ -89,14 +89,13 @@ export default function Contribution() {
         ))}
       </div>
 
-      <div className="mx-auto w-[300px]">
-        <Link href={"/start-your-journey"} target="_blank">
+      <div className="mx-auto w-full flex items-center justify-center">
+        <Link href={"/start-your-journey"}>
           {" "}
           <Button
             className="
               rounded-full
               h-[46px]
-              w-[245px]
               shadow-lg
               flex
               items-center
@@ -110,10 +109,9 @@ export default function Contribution() {
               transition-all
               duration-300
               mt-12
-              
             "
           >
-            Start your journey with AI <ArrowUpRight size={18} />
+            Build your Dream team with AI <ArrowUpRight size={18} />
           </Button>
         </Link>
       </div>
