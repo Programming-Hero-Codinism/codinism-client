@@ -24,7 +24,7 @@ const features = [
 
 export default function Contribution() {
   return (
-    <section id="staff-aug" className="bg-[#000102] py-8 px-4 mt-16">
+    <section id="staff-aug" className="bg-[#000102] py-8 px-4 mt-16 text-white">
       <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px]  leading-tight">
         How we contributed to <br /> build a dream team
       </h1>
