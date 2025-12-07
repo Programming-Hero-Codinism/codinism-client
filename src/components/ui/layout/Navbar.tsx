@@ -68,12 +68,15 @@ export default function Navbar() {
 
             {/* Right-side CTA Button */}
             <div className="hidden md:block">
-              <Button
-                style={{ filter: "brightness(120%)" }}
-                className="rounded-full h-[50px] w-[152px] shadow-lg"
-              >
-                Start a free trial
-              </Button>
+              <Link href="#know">
+                {" "}
+                <Button
+                  style={{ filter: "brightness(120%)" }}
+                  className="rounded-full h-[50px] w-[152px] shadow-lg"
+                >
+                  See Services
+                </Button>
+              </Link>
             </div>
           </div>
 
@@ -123,7 +126,7 @@ export default function Navbar() {
               </NavigationMenu>
 
               {/* CTA Button for mobile */}
-              <Button className="rounded-full h-12 w-40">Start a free trial</Button>
+              <Button className="rounded-full h-12 w-40">See Services</Button>
             </div>
           )}
         </div>
