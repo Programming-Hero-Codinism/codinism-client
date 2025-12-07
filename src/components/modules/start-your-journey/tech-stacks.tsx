@@ -1,28 +1,25 @@
-import { SectionTitle } from "@/components/custom";
+"use client";
+import { useTeamSpecs } from "@/stores/useTeamSpecs";
 import Image from "next/image";
+import React from "react";
 
-// List of technology stack logos
-
-export default function TechStack() {
+export default function TechStacks() {
+  const { toggleTechStack, techStacks } = useTeamSpecs();
+  const isSelected = (tech: string) => techStacks.includes(tech);
   return (
-    <>
-      {/* ---------------------------- SECTION TITLE ---------------------------- */}
-      <div className="w-[450px] mx-auto text-center mt-16 max-w-full">
-        <SectionTitle className="text-center text-white" size="2xl">
-          What tech stack we work with
-        </SectionTitle>
+    <div>
+      <div className="text-white flex items-center gap-3">
+        <div className="bg-primary/30 p-3 w-12 h-12 rounded-full flex justify-center items-center">
+          <h5 className="text-center text-primary text-xl font-semibold">01</h5>
+        </div>
+        <p className="text-xl">How many roles are you looking to feel ?</p>
       </div>
-
-      {/* ---------------------------- STACK LOGOS ---------------------------- */}
-      {/* Responsive block:
-          - `flex-wrap` ensures logos wrap naturally on smaller screens
-          - fixed width center-aligned container for consistency
-      */}
       <div className="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-        {techStack?.map((tech, index) => (
+        {rolesData?.map((tech, index) => (
           <div
             key={index}
-            className={`bg-primary/10 p-6 text-center items-center justify-center flex  gap-3 cursor-pointer hover:bg-primary/20 transition`}
+            className={`bg-primary/10 p-6 text-center items-center justify-center flex  gap-3 cursor-pointer hover:bg-primary/20 transition ${isSelected(tech.title) ? "border-2 border-primary" : "border-transparent border-2"}`}
+            onClick={() => toggleTechStack(tech.title)}
           >
             <Image
               src={tech.icon}
@@ -36,11 +33,11 @@ export default function TechStack() {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
-const techStack = [
+const rolesData = [
   { title: "Javascript", icon: "/icon/stacks/javascript.png" },
   { title: "TypeScript", icon: "/icon/stacks/typescript.png" },
   { title: "React", icon: "/icon/stacks/react.png" },

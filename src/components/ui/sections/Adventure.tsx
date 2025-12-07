@@ -2,11 +2,19 @@ import { SectionTitle } from "@/components/custom";
 import Image from "next/image";
 
 const adventureLogo = [
-  { logo: "/icon/logoipsum-354.png" },
-  { logo: "/icon/logoipsum-367.png" },
-  { logo: "/icon/logoipsum-354.png" },
-  { logo: "/icon/logoipsum-393.png" },
-  { logo: "/icon/logoipsum-367.png" },
+  { logo: "/icon/collabs/accenture.svg" },
+  { logo: "/icon/collabs/adobe.png" },
+  { logo: "/icon/collabs/microsoft.webp" },
+  { logo: "/icon/collabs/baker.svg" },
+  { logo: "/icon/collabs/carrefour.svg" },
+  { logo: "/icon/collabs/chase.png" },
+  { logo: "/icon/collabs/ebay.svg" },
+  { logo: "/icon/collabs/ibm.png" },
+  { logo: "/icon/collabs/pickaboo.png" },
+  { logo: "/icon/collabs/shopify.png" },
+  { logo: "/icon/collabs/target.png" },
+  { logo: "/icon/collabs/tesco.png" },
+  { logo: "/icon/collabs/tesla.png" },
 ];
 
 export default function Adventure() {
