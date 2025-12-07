@@ -5,11 +5,9 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 import classNames from "classnames";
 import * as React from "react";
 
-// -------------------------
-// Types
-// -------------------------
 export interface AccordionItemType {
   value: string;
+  number?: string;
   title: string;
   content: string | React.ReactNode;
 }
@@ -18,90 +16,85 @@ interface AccordionProps {
   items: AccordionItemType[];
 }
 
-// -------------------------
-// Accordion Component
-// -------------------------
 const Accordion: React.FC<AccordionProps> = ({ items = [] }) => {
   return (
     <AccordionPrimitive.Root
-      className="w-full max-w-md rounded-md border border-primary bg-mauve6"
       type="single"
-      defaultValue={items[0]?.value}
       collapsible
+      className="w-full"
+      defaultValue={items[0]?.value}
     >
-      {Array.isArray(items) &&
-        items.map((item) => (
-          <AccordionItem key={item.value} value={item.value}>
-            <AccordionTrigger>{item.title}</AccordionTrigger>
-            <AccordionContent>{item.content}</AccordionContent>
-          </AccordionItem>
-        ))}
+      {items.map((item) => (
+        <AccordionItem key={item.value} value={item.value}>
+          <AccordionTrigger number={item.number}>{item.title}</AccordionTrigger>
+          <AccordionContent>{item.content}</AccordionContent>
+        </AccordionItem>
+      ))}
     </AccordionPrimitive.Root>
   );
 };
 
-// -------------------------
-// Accordion Item
-// -------------------------
 const AccordionItem = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Item>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
 >(({ children, className, ...props }, ref) => (
   <AccordionPrimitive.Item
+    ref={ref}
     className={classNames(
-      "mt-px overflow-hidden first:mt-0 first:rounded-t last:rounded-b focus-within:relative focus-within:z-10 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary",
+      "border-b border-b-[#011228] data-[state=open]:border-b-primary  data-[state=open]:border-b-2",
       className,
     )}
     {...props}
-    ref={ref}
   >
     {children}
   </AccordionPrimitive.Item>
 ));
 AccordionItem.displayName = "AccordionItem";
 
-// -------------------------
-// Accordion Trigger
-// -------------------------
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
->(({ children, className, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> & {
+    number?: string;
+  }
+>(({ children, number, className, ...props }, ref) => (
+  <AccordionPrimitive.Header>
     <AccordionPrimitive.Trigger
+      ref={ref}
+      {...props}
       className={classNames(
-        "group flex h-[45px] flex-1 cursor-pointer items-center justify-between bg-mauve1 px-5 text-[15px] leading-none text-violet11 shadow-[0_1px_0] shadow-mauve6 outline-none hover:bg-mauve2 focus:border-primary focus:ring-2 focus:ring-primary",
+        "group w-full flex items-center justify-between py-5 cursor-pointer px-1 transition-all",
+        "data-[state=open]:bg-[#0A1A2F]/20",
         className,
       )}
-      {...props}
-      ref={ref}
     >
-      {children}
-      <ChevronDownIcon
-        className="text-violet10 transition-transform duration-300 ease-[cubic-bezier(0.87,_0,_0.13,_1)] group-data-[state=open]:rotate-180"
-        aria-hidden
-      />
+      <div className="flex items-center gap-5">
+        {/* Number bubble */}
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#001636]   text-lg text-primary">
+          {number}
+        </div>
+
+        <span className="text-white text-xl font-medium">{children}</span>
+      </div>
+
+      <ChevronDownIcon className="w-6 h-6 text-white transition-transform duration-300 group-data-[state=open]:rotate-180" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
 AccordionTrigger.displayName = "AccordionTrigger";
 
-// -------------------------
-// Accordion Content
-// -------------------------
 const AccordionContent = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
 >(({ children, className, ...props }, ref) => (
   <AccordionPrimitive.Content
+    ref={ref}
+    {...props}
     className={classNames(
-      "overflow-hidden bg-mauve2 text-[15px] text-mauve11 data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown",
+      "overflow-hidden text-gray-300 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp",
       className,
     )}
-    {...props}
-    ref={ref}
   >
-    <div className="px-5 py-[15px]">{children}</div>
+    <div className="px-20 pb-6 pt-1 text-base leading-relaxed">{children}</div>
   </AccordionPrimitive.Content>
 ));
 AccordionContent.displayName = "AccordionContent";

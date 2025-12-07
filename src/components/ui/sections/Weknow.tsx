@@ -48,7 +48,7 @@ const weKnowData = [
 
 export default function WeKnow() {
   return (
-    <section className="mt-16">
+    <section id="know" className="mt-16">
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <SectionTitle size="2xl" className="text-center text-white">
         Trails we know well
@@ -65,7 +65,7 @@ export default function WeKnow() {
           <div
             key={index}
             className="
-              w-[424px] h-[300px]
+              w-[424px] h-[340px]
               border border-secondary
               p-8 flex flex-col
               transition-all duration-300 hover:scale-[1.02]

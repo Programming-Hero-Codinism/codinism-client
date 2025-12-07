@@ -10,24 +10,28 @@ import { Button } from "../button";
  */
 const accordionData = [
   {
+    number: "01",
     value: "discovery",
     title: "Discovery & Consultation",
     content:
       "We start by understanding your business, goals, and current challenges. Through detailed consultation, we uncover opportunities for growth and identify key focus areas.",
   },
   {
+    number: "02",
     value: "strategy",
     title: "Strategy & Planning",
     content:
       "Based on the insights gathered, we design a tailored strategy and actionable roadmap. This includes prioritizing initiatives, defining KPIs, and aligning resources for maximum impact.",
   },
   {
+    number: "03",
     value: "execution",
     title: "Execution & Growth",
     content:
       "Our team implements the strategy with precision. From campaigns to operational improvements, we focus on delivering measurable results and accelerating business growth.",
   },
   {
+    number: "04",
     value: "monitoring",
     title: "Monitoring & Optimization",
     content:
