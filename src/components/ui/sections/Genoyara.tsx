@@ -22,7 +22,11 @@ export default function GenyoraSection() {
           {/*  CENTERED RESPONSIVE TEXT (text remains centered across all screens) */}
           <div className="absolute w-full flex justify-center">
             <p className="text-center text-xl mt-6 leading-relaxed md:text-2xl">
-              With codinism, Genyora <br /> just brought to life
+              With codinism,{" "}
+              <a href="https://www.zenyora.com/" target="_blank">
+                Genyora
+              </a>{" "}
+              <br /> just brought to life
             </p>
           </div>
 

@@ -109,7 +109,7 @@ const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: 
               Let’s Talk <ArrowUpRight size={18} />
             </Button>
 
-            <Button
+            {/* <Button
               className="
               rounded-full
               h-12
@@ -127,7 +127,7 @@ const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: 
             "
             >
               See Service
-            </Button>
+            </Button> */}
           </div>
         )}
       </div>

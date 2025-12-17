@@ -51,7 +51,7 @@ const weKnowData = [
 export default function WeKnow() {
   const { setIsOpen } = useContactForm();
   return (
-    <section className="mt-16" id="service">
+    <section className="mt-16" id="services">
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <SectionTitle size="2xl" className="text-center text-white">
         Trails we know well
