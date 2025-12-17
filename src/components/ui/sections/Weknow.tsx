@@ -12,38 +12,44 @@ import { useContactForm } from "@/stores/useContactForm";
 const weKnowData = [
   {
     title: "Web3",
-    subtitle: "No cookie-cutter plans here.",
-    description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
+    subtitle: "Decentralized excellence awaits.",
+    description:
+      "Build the future of the internet with cutting-edge blockchain solutions that empower your vision and disrupt industries.",
     image: "/icon/Feature-Icon-1.png",
   },
   {
     title: "Shopify, Wordpress",
-    subtitle: "No cookie-cutter plans here.",
-    description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
+    subtitle: "Commerce redefined for scale.",
+    description:
+      "Transform your e-commerce presence into a revenue powerhouse with stunning storefronts and seamless customer experiences.",
     image: "/icon/Feature-Icon-2.png",
   },
   {
     title: "Blockchain",
-    subtitle: "No cookie-cutter plans here.",
-    description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
+    subtitle: "Security meets innovation.",
+    description:
+      "Harness the power of distributed ledger technology to create transparent, immutable solutions that redefine trust.",
     image: "/icon/Feature-icon-3.png",
   },
   {
     title: "Big Data",
-    subtitle: "No cookie-cutter plans here.",
-    description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
+    subtitle: "Intelligence from infinite insights.",
+    description:
+      "Transform raw data into actionable intelligence with advanced analytics that drive smarter decisions and explosive growth.",
     image: "/icon/Feature-Icon-4.png",
   },
   {
     title: "Mobile Apps",
-    subtitle: "No cookie-cutter plans here.",
-    description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
+    subtitle: "Experiences at your fingertips.",
+    description:
+      "Craft lightning-fast, intuitive mobile applications that captivate users and dominate every app store category.",
     image: "/icon/Feature-Icon-5.png",
   },
   {
     title: "Fullstack Web Application",
-    subtitle: "No cookie-cutter plans here.",
-    description: "We tailor every strategy to fit your unique goals and budget for maximum impact.",
+    subtitle: "Complete digital mastery.",
+    description:
+      "From elegant frontends to robust backends, we engineer full-stack solutions that scale infinitely and exceed expectations.",
     image: "/icon/Feature-Icon-6.png",
   },
 ];
