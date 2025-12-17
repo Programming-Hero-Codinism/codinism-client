@@ -27,12 +27,12 @@ export default function StartYourJourney() {
       </div>
       <div className="justify-center items-center flex gap-3 mt-12 mb-24 ">
         <Button
-          className="rounded-full py-3 bg-primary/80  border-2 border-primary"
+          className="rounded-full h-12 px-6 py-3 bg-primary/80 border-2 border-primary"
           onClick={() => setOpen(true)}
         >
           Submit requirements
         </Button>
-        <Button className="rounded-full bg-primary/50 border-2  border-primary/70 py-3">
+        <Button className="rounded-full h-12 px-6 py-3 bg-primary/50 border-2 border-primary/70">
           Cancel
         </Button>
       </div>

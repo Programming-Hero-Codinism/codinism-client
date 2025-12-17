@@ -24,7 +24,7 @@ export default function GenyoraSection() {
             <p className="text-center text-xl mt-6 leading-relaxed md:text-2xl">
               With codinism,{" "}
               <a href="https://www.zenyora.com/" target="_blank">
-                Genyora
+                Zenyora
               </a>{" "}
               <br /> just brought to life
             </p>

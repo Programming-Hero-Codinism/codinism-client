@@ -73,7 +73,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-6">Let’s work together!</p>
             <Button
               onClick={() => setIsOpen(true)}
-              className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full shadow-lg w-[70%]"
+              className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full shadow-lg h-12"
             >
               Send a message <ArrowUpRight size={18} />
             </Button>

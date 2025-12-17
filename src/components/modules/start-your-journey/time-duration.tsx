@@ -9,7 +9,7 @@ export default function TimeDuration() {
     <div>
       <div className="text-white flex items-center gap-3">
         <div className="bg-primary/30 p-3 w-12 h-12 rounded-full flex justify-center items-center">
-          <h5 className="text-center text-primary text-xl font-semibold">01</h5>
+          <h5 className="text-center text-primary text-xl font-semibold">03</h5>
         </div>
         <p className="text-xl">Time frame you&apos;re expecting ?</p>
       </div>

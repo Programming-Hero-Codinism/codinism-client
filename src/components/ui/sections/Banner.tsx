@@ -66,8 +66,8 @@ export default function Banner({
             text-white
           "
         >
-          {title_one ?? " From idea to "}
-          <br /> {title_two ?? "reality fast with AI."}
+          {title_one ?? " From Idea To "}
+          <br /> {title_two ?? "Reality Fast With AI."}
         </SectionTitle>
 
         {/* Subtitle / Description */}
@@ -105,7 +105,8 @@ export default function Banner({
               className="
               rounded-full
               h-12
-              w-[160px]
+              px-6
+              py-3
               shadow-lg
               flex
               items-center
@@ -128,7 +129,8 @@ export default function Banner({
               className="
               rounded-full
               h-12
-              w-[160px]
+              px-6
+              py-3
               bg-secondary
               hover:bg-secondary/90
               text-white

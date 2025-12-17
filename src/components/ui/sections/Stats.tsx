@@ -33,6 +33,13 @@ const Stats = () => {
         </div>
 
         {/* Main Content */}
+        {/* <div className="text-center">
+          <h1 className="text-[90px] font-bold text-[#007AFF] leading-none">100K</h1>
+
+          <p className="text-gray-300 text-lg mt-4">
+            of dreams that come true <br /> in reality.
+          </p>
+        </div> */}
         <div className="text-center">
           <h1 className="text-[90px] font-bold text-[#007AFF] leading-none">100K</h1>
 

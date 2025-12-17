@@ -60,7 +60,7 @@ export default function WeKnow() {
     <section className="mt-16" id="services">
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <SectionTitle size="2xl" className="text-center text-white">
-        Trails we know well
+        Trails We Know Well
       </SectionTitle>
 
       {/* ---------------------------- CARD WRAPPER ---------------------------- */}
@@ -111,7 +111,7 @@ export default function WeKnow() {
           className="
             flex items-center gap-2 bg-primary text-white
             px-6 py-3 rounded-full shadow-lg
-            h-[30px] w-[190px] mt-6
+            h-12 mt-6
           "
           onClick={() => setIsOpen(true)}
         >

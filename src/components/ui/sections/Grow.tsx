@@ -42,7 +42,7 @@ export default function Grow() {
     <section className="mt-16 text-white" id="faq">
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <SectionTitle size="2xl" className="text-center text-white">
-        How we can grow together
+        How We Can Grow Together
       </SectionTitle>
 
       {/* ---------------------------- MAIN GRID ---------------------------- */}
@@ -70,7 +70,7 @@ export default function Grow() {
             className="
                 flex items-center gap-2 bg-primary text-white
                 px-6 py-3 rounded-full shadow-lg
-                h-[30px] w-[170px] mt-16
+                h-12 mt-16
               "
           >
             Send a message <ArrowUpRight size={18} />

@@ -10,9 +10,9 @@ export default function TechStacks() {
     <div>
       <div className="text-white flex items-center gap-3">
         <div className="bg-primary/30 p-3 w-12 h-12 rounded-full flex justify-center items-center">
-          <h5 className="text-center text-primary text-xl font-semibold">01</h5>
+          <h5 className="text-center text-primary text-xl font-semibold">02</h5>
         </div>
-        <p className="text-xl">How many roles are you looking to feel ?</p>
+        <p className="text-xl">What Tech Stack You Are Looking For?</p>
       </div>
       <div className="text-white grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
         {rolesData?.map((tech, index) => (
@@ -61,4 +61,5 @@ const rolesData = [
 
   // DevOps
   { title: "DevOps", icon: "/icon/stacks/devops.png" },
+  { title: "AWS", icon: "/icon/aws.png" },
 ];

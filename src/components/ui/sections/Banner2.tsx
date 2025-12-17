@@ -52,8 +52,8 @@ const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: 
             text-white
           "
         >
-          {title_one ?? " From idea to "}
-          <br /> {title_two ?? "reality fast with AI."}
+          {title_one ?? " From Idea To "}
+          <br /> {title_two ?? "Reality Fast With AI."}
         </SectionTitle>
 
         {/* Subtitle */}
@@ -90,7 +90,8 @@ const Banner2 = ({ title_one, title_two, description, hideCTABtns, className }: 
               className="
               rounded-full
               h-12
-              w-[160px]
+              px-6
+              py-3
               shadow-lg
               flex
               items-center

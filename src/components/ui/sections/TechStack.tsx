@@ -9,7 +9,7 @@ export default function TechStack() {
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <div className="w-[450px] mx-auto text-center mt-16 max-w-full">
         <SectionTitle className="text-center text-white" size="2xl">
-          What tech stack we work with
+          What Tech Stack We Work With
         </SectionTitle>
       </div>
 
@@ -64,4 +64,5 @@ const techStack = [
 
   // DevOps
   { title: "DevOps", icon: "/icon/stacks/devops.png" },
+  { title: "AWS", icon: "/icon/aws.png" },
 ];

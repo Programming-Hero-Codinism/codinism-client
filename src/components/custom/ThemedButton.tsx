@@ -19,7 +19,7 @@ export default function ThemedButton({
   return (
     <Button
       className={cn(
-        "group relative w-fit h-11 md:h-10 rounded-full px-6 text-slate-800 dark:text-accent-foreground border border-primary shadow-sm transition-colors duration-300 bg-gradient-to-r from-primary/20 to-primary/50 hover:bg-gradient-to-l hover:to-primary/60 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 cursor-pointer",
+        "group relative w-fit h-12 px-6 py-3 rounded-full text-slate-800 dark:text-accent-foreground border border-primary shadow-sm transition-colors duration-300 bg-gradient-to-r from-primary/20 to-primary/50 hover:bg-gradient-to-l hover:to-primary/60 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/50 cursor-pointer",
         className,
       )}
       {...props}

@@ -72,7 +72,7 @@ export default function Navbar() {
                 {" "}
                 <Button
                   style={{ filter: "brightness(120%)" }}
-                  className="rounded-full h-[50px] w-[152px] shadow-lg"
+                  className="rounded-full h-12 px-6 py-3 shadow-lg"
                 >
                   See Services
                 </Button>
@@ -127,7 +127,7 @@ export default function Navbar() {
 
               {/* CTA Button for mobile */}
               <Link href="#services">
-                <Button className="rounded-full h-12 w-40">See Services</Button>
+                <Button className="rounded-full h-12 px-6 py-3">See Services</Button>
               </Link>
             </div>
           )}

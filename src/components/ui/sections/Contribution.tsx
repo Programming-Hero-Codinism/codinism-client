@@ -26,7 +26,7 @@ export default function Contribution() {
   return (
     <section id="staff-aug" className="bg-[#000102] py-8 px-4 mt-16 text-white">
       <h1 className="text-center text-4xl sm:text-5xl md:text-6xl lg:text-[64px]  leading-tight">
-        How we contributed to <br /> build a dream team
+        How We Contributed To <br /> Build A Dream Team
       </h1>
 
       <div className="grid gap-6 md:grid-cols-3  mx-auto mt-12">
@@ -95,7 +95,9 @@ export default function Contribution() {
           <Button
             className="
               rounded-full
-              h-[46px]
+              h-12
+              px-6
+              py-3
               shadow-lg
               flex
               items-center
@@ -111,7 +113,7 @@ export default function Contribution() {
               mt-12
             "
           >
-            Build your Dream team with AI <ArrowUpRight size={18} />
+            Build Your Dream Team With AI <ArrowUpRight size={18} />
           </Button>
         </Link>
       </div>

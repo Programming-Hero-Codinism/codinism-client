@@ -29,7 +29,7 @@ export default function Adventure() {
       {/* ---------------------------- SECTION TITLE ---------------------------- */}
       <div className="mt-32">
         <SectionTitle size="2xl" className="text-center text-white">
-          Past adventures we conquered together
+          Past Adventures We Conquered Together
         </SectionTitle>
       </div>
 
