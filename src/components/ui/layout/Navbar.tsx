@@ -14,7 +14,7 @@ import { Button } from "../button";
 
 // Navigation menu items
 const menu = [
-  { path: "#service", label: "Service" },
+  // { path: "#service", label: "Service" },
   { path: "/start-your-journey", label: "Hire AI First Engineer" },
   { path: "#faq", label: "Why Codinism" },
   // { path: "/about", label: "About" },
@@ -68,7 +68,7 @@ export default function Navbar() {
 
             {/* Right-side CTA Button */}
             <div className="hidden md:block">
-              <Link href="#know">
+              <Link href="#services">
                 {" "}
                 <Button
                   style={{ filter: "brightness(120%)" }}
@@ -126,7 +126,9 @@ export default function Navbar() {
               </NavigationMenu>
 
               {/* CTA Button for mobile */}
-              <Button className="rounded-full h-12 w-40">See Services</Button>
+              <Link href="#services">
+                <Button className="rounded-full h-12 w-40">See Services</Button>
+              </Link>
             </div>
           )}
         </div>
