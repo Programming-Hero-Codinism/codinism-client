@@ -7,6 +7,7 @@ import { DialogProps } from "@radix-ui/react-dialog";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import emailjs from "@emailjs/browser";
 
 import {
   Form,
@@ -17,6 +18,27 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { PhoneInput } from "../custom/PhoneInput";
+import { useTeamSpecs } from "@/stores/useTeamSpecs";
+import { Textarea } from "../ui/textarea";
+import { useState } from "react";
+
+const emailjsOptions = {
+  publicKey: "YOUR_PUBLIC_KEY",
+  // Do not allow headless browsers
+  blockHeadless: true,
+  blockList: {
+    // Block the suspended emails
+    list: ["foo@emailjs.com", "bar@emailjs.com"],
+    // The variable contains the email address
+    watchVariable: "userEmail",
+  },
+  limitRate: {
+    // Set the limit rate for the application
+    id: "app",
+    // Allow 1 request per 10s
+    throttle: 10000,
+  },
+};
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -27,6 +49,7 @@ const formSchema = z.object({
   }),
   email: z.email(),
   phone: z.string(),
+  message: z.string(),
 });
 
 type SendMessageFormProps = DialogProps & {
@@ -34,13 +57,10 @@ type SendMessageFormProps = DialogProps & {
   onOpenChange?: (open: boolean) => void;
 };
 
-function onSubmit(values: z.infer<typeof formSchema>) {
-  // Do something with the form values.
-  // ✅ This will be type-safe and validated.
-  console.log(values);
-}
-
 export function SendMessageForm({ open, onOpenChange }: SendMessageFormProps) {
+  const [isLoading, setIsLoading] = useState(false);
+  const { teamSize, timeFrame, techStacks } = useTeamSpecs();
+  emailjs.init(emailjsOptions);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,8 +68,45 @@ export function SendMessageForm({ open, onOpenChange }: SendMessageFormProps) {
       company: "",
       email: "",
       phone: "",
+      message: "",
     },
   });
+  console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    const templateParams = {
+      ...values,
+      teamSize,
+      timeFrame,
+      techStacks: techStacks.join(", "),
+    };
+    console.log({ templateParams });
+    setIsLoading(true);
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_SERVICE_ID ?? "",
+        process.env.NEXT_PUBLIC_TEMPLATE_ID ?? "",
+        templateParams,
+        {
+          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY,
+        },
+      )
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        },
+      )
+      .finally(() => {
+        setIsLoading(false);
+        form.reset();
+        onOpenChange?.(false);
+      });
+  }
+
   return (
     <Dialog {...{ open, onOpenChange }}>
       <DialogContent className="sm:max-w-[525px] bg-[#000102] border-primary/30 border-2 text-white py-12">
@@ -118,8 +175,24 @@ export function SendMessageForm({ open, onOpenChange }: SendMessageFormProps) {
                   )}
                 />
               </div>
+              <div className="col-span-2">
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Message</FormLabel>
+                      <FormControl>
+                        {/* <Input placeholder="Enter phone number" {...field} /> */}
+                        <Textarea placeholder="Tell us your story..." {...field} />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+              </div>
             </div>
-            <Button type="submit" className="w-full">
+            <Button disabled={isLoading} type="submit" className="w-full">
               Send a message
             </Button>
           </form>
