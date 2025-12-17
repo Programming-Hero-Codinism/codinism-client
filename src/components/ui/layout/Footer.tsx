@@ -48,11 +48,9 @@ export default function Footer() {
 
               <h3 className="text-gray-300 font-semibold mt-8 mb-4">Location</h3>
               <p className="text-gray-400 text-sm leading-relaxed">
-                940 Goldendale Dr,
+                Austin,
                 <br />
-                Wasilla, Alaska 99654,
-                <br />
-                USA
+                TX-78738, USA
               </p>
             </div>
 
@@ -64,8 +62,8 @@ export default function Footer() {
                 <li>FAQs</li>
               </ul>
 
-              <h3 className="text-gray-300 font-semibold mt-8 mb-4">Location</h3>
-              <p className="text-gray-400 text-sm">+921 3784 9812</p>
+              <h3 className="text-gray-300 font-semibold mt-8 mb-4">Contact</h3>
+              <p className="text-gray-400 text-sm">+17014124019</p>
             </div>
           </div>
 
