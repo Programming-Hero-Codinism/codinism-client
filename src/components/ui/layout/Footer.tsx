@@ -1,9 +1,12 @@
+"use client";
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
 import { Button } from "../button";
 import Codinism from "../sections/Codinism";
+import { useContactForm } from "@/stores/useContactForm";
 
 export default function Footer() {
+  const { setIsOpen } = useContactForm();
   return (
     <section id="contact" className="overflow-hidden  md:mx-auto max-w-[1400px] mt-16 relative">
       <footer className="bg-[#000814] text-white border border-secondary ">
@@ -70,7 +73,10 @@ export default function Footer() {
           <div className="p-10 flex flex-col justify-center items-start md:items-center">
             <h3 className="text-2xl font-semibold mb-2">Schedule a call</h3>
             <p className="text-gray-400 text-sm mb-6">Let’s work together!</p>
-            <Button className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full shadow-lg w-[70%]">
+            <Button
+              onClick={() => setIsOpen(true)}
+              className="flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full shadow-lg w-[70%]"
+            >
               Send a message <ArrowUpRight size={18} />
             </Button>
           </div>
