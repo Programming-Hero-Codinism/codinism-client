@@ -44,7 +44,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             <ConditionalLayout>
-              <Toaster richColors position="bottom-right" />
+              <Toaster richColors position="top-right" />
               {children}
             </ConditionalLayout>
           </ThemeProvider>

@@ -4,10 +4,11 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { DialogProps } from "@radix-ui/react-dialog";
 
+import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
-import emailjs from "@emailjs/browser";
 
 import {
   Form,
@@ -17,10 +18,10 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { PhoneInput } from "../custom/PhoneInput";
 import { useTeamSpecs } from "@/stores/useTeamSpecs";
-import { Textarea } from "../ui/textarea";
 import { useState } from "react";
+import { PhoneInput } from "../custom/PhoneInput";
+import { Textarea } from "../ui/textarea";
 
 const emailjsOptions = {
   publicKey: "YOUR_PUBLIC_KEY",
@@ -74,7 +75,7 @@ export function SendMessageForm({ open, onOpenChange }: SendMessageFormProps) {
   console.log(process.env.NEXT_PUBLIC_SERVICE_ID);
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
-    // ✅ This will be type-safe and validated.
+    // This will be type-safe and validated.
     const templateParams = {
       ...values,
       teamSize,
@@ -95,16 +96,21 @@ export function SendMessageForm({ open, onOpenChange }: SendMessageFormProps) {
       .then(
         () => {
           console.log("SUCCESS!");
+          setIsLoading(false);
+          form.reset();
+          onOpenChange?.(false);
+          toast.success("Message sent successfully!", {
+            description: "We'll get back to you as soon as possible.",
+          });
         },
         (error) => {
           console.log("FAILED...", error.text);
+          setIsLoading(false);
+          toast.error("Failed to send message", {
+            description: "Please try again later.",
+          });
         },
-      )
-      .finally(() => {
-        setIsLoading(false);
-        form.reset();
-        onOpenChange?.(false);
-      });
+      );
   }
 
   return (
